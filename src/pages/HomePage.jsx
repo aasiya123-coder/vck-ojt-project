@@ -3,9 +3,11 @@ import Header from "../components/Header/Header";
 
 const HomePage = () => {
     return(
-        
+        <div>
+            <Header/>
+           <div className="main container" >
          <div className="page-container" style={{ overflow:"auto"}}>
-           <Header/>
+    
             <div className="hero-section">
                 <img src="\images\college-banner.png" alt="Vivekanand College Campus" className="hero-banner-image"/>
             <div className="main">
@@ -37,7 +39,8 @@ const HomePage = () => {
             </Link>{" "}
             </div>
         </div>
-  
+        </div>
+        </div>
         );
 }
 

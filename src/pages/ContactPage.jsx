@@ -1,7 +1,9 @@
-import 
+import Header from "../components/Header/Header";
 
 const ContactPage = () => {
     return (
+        <div>
+    <Header/>
         <div className="page-container" style={{overflow:"auto"}}>
             <Header/>
             <h1>Contact Us</h1>
@@ -48,6 +50,7 @@ const ContactPage = () => {
             <p>
                 [A contact form with fields for Name, Email, Subject, Message can be added here.]
             </p>
+        </div>
         </div>
     )
 }

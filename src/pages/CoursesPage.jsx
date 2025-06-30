@@ -1,18 +1,23 @@
 import { Link } from "react-router-dom";
+import Header from "../components/Header/Header";
+import React from "react";
 
 const CoursesPage = () => {
   return(
-        <div className="container">
-            <div id="courses">
+    <div>
+        <Header/>
+        <div className="page-container" style={{overflow:"auto"}}>
+
             <h1>Our Academic Programs</h1>
                 <p>Vivekanand College offers a comprehensive range of undergraduate and postgraduate programs designed to equip students with the knowledge and skills demanded by today's dynamic global landscape. Our curriculum is regularly updated to reflect industry trends and academic advancements.
                 </p>
             <h2>Discover Campus Life</h2>
-            </div>
+            <hr/>
             <div className="video-container">
-            <video src="\videos\college-tour.mp4" controls>
+             <video width="100%" height="auto" course-video>
+            <source src="\videos\college-tour.mp4" type="video/mp4"/>
             </video>
-            <p>Get a glimpse of the vibrant academic and social life at Vivekanand College.</p>
+            <p className="video-caption">Get a glimpse of the vibrant academic and social life at Vivekanand College.</p>
             </div>
          <h3>Undergraduate Programs (UG)</h3>
     <ul className="courses-ul">
@@ -46,7 +51,7 @@ const CoursesPage = () => {
     </ul>
     </ul>
     <h2>Program Details & Fee Structure (Annual)</h2>
-    <table>
+    <table className="admission-table course-details-table">
         <thead>
         <tr>
             <th>Program Type</th>
@@ -82,10 +87,11 @@ const CoursesPage = () => {
     </table>
     <h3>Specialized & Vocational Courses</h3>
     <p>In addition to traditional degree programs, we offer various certificate and diploma courses in areas like Digital Marketing, Web Development, Data Analytics, and Soft Skills Development, providing specialized training for career enhancement.</p>
-            
-                <p>Explore detauked stkkavu and admission criteia on our Addmission page.</p>
-                <Link to="/contact" className="button">Inquire About Courses</Link>
-    
+            <div className="call-to-action">
+                <p>Have questions about specific course?</p>
+                <Link to="/contact" className="btn">Inquire About Courses</Link>
+            </div>
+            </div>
             </div>
   )
 }

@@ -1,5 +1,5 @@
 
-body{
+/* body{
   margin: 0;
   font-family: Arial, sans-serif;
 }
@@ -10,13 +10,13 @@ body{
   width: 100%;
   display: block;
   margin: 0 auto;
-}
+} */
 .page-container{
-    max-width: 960px;
+    max-width: 990px;
     height: 500px;
-    margin: 20px auto;
+    margin: 10px auto;
     padding: 20px;
-    background-color: #FFFFFF;
+    background-color: #ecf2f3;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
@@ -82,7 +82,7 @@ body{
 }
 
 .hero-banner-image {
-  width: 100%;
+  width: 200%;
   height: 100%;
   object-fit: fill;
   filter: brightness(60%);
@@ -105,7 +105,7 @@ body{
 }  
 
 .main p {
-  color: white;
+  color: rgb(24, 23, 23);
   font-size: 1.3em;
   margin-bottom: 25px;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
