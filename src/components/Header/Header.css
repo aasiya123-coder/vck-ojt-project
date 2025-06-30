@@ -1,0 +1,155 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+.content{
+  background-color: #52d2d2;
+  flex-grow: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  margin-top: 80px;
+}
+.main-header{
+    position: fixed;
+    left: 0;
+    right: 0;
+    height: 70px;
+    width: 100%;
+
+}
+
+.main-header {
+    background-color: #007BFF;
+    color: white;
+    padding: 15px 30px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}
+header{
+    unicode-range: isolate;
+}
+.college-name{
+    font-size: 1.8em;
+    font-weight: bold;
+}
+.college-name a{
+    color: white !important;  
+    margin: 0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.college-name a:hover{
+    color: #E0E0E0;
+}
+
+.desktop-nav{
+    display: flex;
+    gap: 25px;
+    align-items: center;
+}
+.navbar desktop-nav{
+    margin-top: auto;
+    padding-top: auto;
+}
+.nav-item {
+    color: white !important;
+    text-decoration: none;
+    margin: 5px;
+    font-weight: 500;
+    padding: 5px 0;
+    transition: color 0.3s ease, border-bottom 0.3s ease;
+}
+
+
+.nav-item:hover{
+    color: #E0E0E0;
+    border-bottom: 2px solid #E0E0E0;
+    
+}
+
+.btn.primary-btn{
+    background-color: #28A745;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    font-weight: bold;
+}
+
+.btn.primary-btn:hover {
+  background-color: #218838;
+}
+
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.hamburger-icon {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+    margin: 4px 0;
+}
+
+.drawer-nav {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    height: 100%;
+    width: 250px;
+    background-color: #007BFF;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: right 0.3s ease-in-out;
+    z-index: 1000;
+}
+
+.drawer-nav.open {
+    right: 0;
+}
+
+.close-drawer-btn {
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: white;
+    align-self: flex-end;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .desktop-nav,
+    .college-name{display: none;}
+    .hamburger-menu {display: flex;}
+    .drawer-nav {display: flex; flex-direction: column;}
+    nav > .nav-item,
+    .college-name {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .drawer-nav {
+        display: flex;
+    }
+}
+
