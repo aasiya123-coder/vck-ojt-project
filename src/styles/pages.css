@@ -168,15 +168,15 @@
 .admissions-table th,
 .admissions-table td {
   border: 1px solid #1f2020;
-  padding: 12px;
+  padding: 10px;
   text-align: left;
-  font-size: 1.95em;
+  font-size: 1.09em;
 }
 
 .admissions-table th {
   background-color: #E9ECEF;
-  font-weight: bold;
   color: #060607;
+  font-weight: bold;
 }
 .admissions-table tbody tr:nth-child(even) {
   background-color: #F2F2F2;

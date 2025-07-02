@@ -15,8 +15,8 @@ const CoursesPage = () => {
             <h2>Discover Campus Life</h2>
             <hr/>
             <div className="video-container">
-             <video width="100%" height="auto" course-video>
-            <source src="\videos\college-tour.mp4" type="video/mp4"/>
+             <video controls width="100%" height="auto" course-video>
+            <source src="\videos\college-tour.mp4" type="video/mp4" />
             </video>
             <p className="video-caption">Get a glimpse of the vibrant academic and social life at Vivekanand College.</p>
             </div>
@@ -52,7 +52,7 @@ const CoursesPage = () => {
     </ul>
     </ul>
     <h2>Program Details & Fee Structure (Annual)</h2>
-    <table border="1" className="admission-table course-details-table">
+    <table className="admissions-table">
         <thead>
         <tr>
             <th>Program Type</th>

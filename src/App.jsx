@@ -8,6 +8,9 @@ import './styles/pages.css'
 import ChatbotComponent from "./components/Chatbot/ChatbotComponent";
 import { useState } from "react";
 import DeveloperInfoPopup from "./components/Developerinfo/DeveloperinfoPopup";
+import Header from "./components/Header/Header";
+
+
 
 const App = () => {
   const [showPopup, setShowPopup] = useState(true);
@@ -17,13 +20,14 @@ const App = () => {
   };
   return(
       <div>
+      
       <div>
         {/* Your main application content */}
         <DeveloperInfoPopup
           show={showPopup}
           onClose={handleClosePopup}
           studentName="Aasiya Amit Hajarat"
-          studentPhotoUrl="\images\mypic.jpeg" // Path to their photo
+          studentPhotoUrl="\images\aasiya.jpeg" // Path to their photo
           uniqueMessage="Learned so much during this OJT! This app showcases my independent coding and deployment skills"
         />
       </div>
@@ -39,6 +43,7 @@ const App = () => {
       </Routes>
     <ChatbotComponent/>
     </Router>
+    
     </div>
   )
 }

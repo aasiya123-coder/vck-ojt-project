@@ -3,10 +3,10 @@ import Header from "../components/Header/Header";
 
 const HomePage = () => {
     return(
-        <div>
-            <Header/>
+    <div>
+        <Header/>
         <div className="main-container">
-            
+        
          <div className="page-container" style={{ overflow:"auto"}}>
             
             <div className="hero-section">
@@ -42,7 +42,7 @@ const HomePage = () => {
         </div>
         </div>
         </div>
-        );
+        )
 }
 
 export default HomePage;
