@@ -5,7 +5,6 @@ import { SIMILARITY_THRESHOLD } from "../../utils/constants"; // Path adjusted
 import "./Chatbot.css";
 import useOnlineStatus from "../../hooks/useOnlineStatus";
 import KNOWLEDGE_BASE_DATA from "../../data/knowledgeBase.json";
-
 const ChatbotComponent = () => {
   const [messages, setMessages] = useState([
     { text: KNOWLEDGE_BASE_DATA.greeting.response, sender: "bot" },
@@ -18,7 +17,6 @@ const ChatbotComponent = () => {
   const [isKnowledgeBaseLoading, setIsKnowledgeBaseLoading] = useState(true);
   const isOnline = useOnlineStatus();
   const [isChatOpen, setIsChatOpen] = useState(false);
-
   // Preparing the knowledge base data
   useEffect(() => {
     const prepareKB = async () => {
@@ -129,7 +127,6 @@ const ChatbotComponent = () => {
       handleSendMessage();
     }
   };
-
   const toggleChat = () => {
     setIsChatOpen((prev) => !prev);
   };
@@ -140,7 +137,7 @@ const ChatbotComponent = () => {
       {!isChatOpen && (
         <button className="chatbot-open-button" onClick={toggleChat}>
           <img
-            src="\images\chatbot.png.png"
+            src="\images\operator.png"
             alt="Chat Icon"
             style={{ width: "100px", height: "auto" }}
           />

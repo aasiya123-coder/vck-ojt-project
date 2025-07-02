@@ -5,15 +5,16 @@ const HomePage = () => {
     return(
         <div>
             <Header/>
-           <div className="main container" >
+        <div className="main-container">
+            
          <div className="page-container" style={{ overflow:"auto"}}>
-    
+            
             <div className="hero-section">
                 <img src="\images\college-banner.png" alt="Vivekanand College Campus" className="hero-banner-image"/>
             <div className="main">
                 <h1>Welcome to Vivekanand Collage!</h1>
                 <p>Your journey to excellence starts here.</p>
-                <Link to="/admission" className="btn hero-btn">Apply Now!</Link>{""}
+                <Link to="/admissions" className="btn hero-btn">Apply Now!</Link>{""}
             </div>
             </div>
             <p><b>Vivekanand College</b> is a premier educational institution dedicated to fostering academic excellence, innovation, and holistic development. Established in 1980, we have proudly served generations of students, empowering them to achieve their full potential.<br/>
@@ -24,7 +25,7 @@ const HomePage = () => {
              <li><b>Experienced Faculty:</b> Learn from renowned experts and passionate educators.</li>   
              <li><b>Modern Facilities: </b> Well-equipped labs, expansive library, and comfortable campus.</li>   
              <li><b>Holistic Development:</b> Focus on co-curricular activities, sports, and community service.</li> 
-             <li><b>Holistic Development:</b> Focus on co-curricular activities, sports, and community service.</li>  
+             <li><b>Strong Placements:</b>Excellent career opportunities with leading companies</li>  
             </ul>  
             <h2>Campus Life & Facilities</h2>
             <div className="image-gallery">

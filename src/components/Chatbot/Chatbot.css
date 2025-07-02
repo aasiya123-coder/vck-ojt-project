@@ -10,7 +10,6 @@
   flex-direction: column; /* Stack children vertically */
   overflow: hidden; /* Hide any overflow from rounded corners */
 }
-
 /* Chat Header/Title Bar */
 .chat-header {
   background-color: #007BFF;
@@ -27,7 +26,6 @@
   font-size: 1.2em;
   font-weight: bold;
 }
-
 .chat-messages {
   flex-grow: 1; /* Allow this section to grow and take all available space */
   overflow-y: auto; /* Enable vertical scrolling if content overflows */
@@ -42,14 +40,12 @@
   font-size: 1.5em;
   /* Larger icon */
 }
-
 .chat-header h2 {
   margin: 0;
   /* Remove default margin */
   font-size: 1.2em;
   /* Ensure title size is appropriate */
 }
-
 /* Message Row (for aligning avatar and bubble) */
 .message-row {
   display: flex;
@@ -58,17 +54,14 @@
   margin-bottom: 10px;
   /* Space between message rows */
 }
-
 .message-row.user {
   justify-content: flex-end;
   /* Push user messages to the right */
 }
-
 .message-row.bot {
   justify-content: flex-start;
   /* Push bot messages to the left */
 }
-
 /* Avatars */
 .avatar {
   width: 30px;
@@ -85,21 +78,18 @@
   /* NEW/MODIFIED: Add these font families for emoji support */
   font-family: "Segoe UI Emoji", "Apple Color Emoji", "Noto Color Emoji", "Segoe UI Symbol", "EmojiOne Color", "Twemoji Mozilla", "Segoe UI", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-
 .bot-avatar {
   background-color: #6C757D;
   /* Grey for bot */
   margin-right: 8px;
   /* Space between bot avatar and message */
 }
-
 .user-avatar {
   background-color: #28A745;
   /* Green for user */
   margin-left: 8px;
   /* Space between user avatar and message */
 }
-
 /* Adjust existing message bubble styles for better fit */
 .bot-message,
 .user-message {
@@ -112,21 +102,18 @@
   word-wrap: break-word;
   text-align: left;
 }
-
 .bot-message {
   /* align-self: flex-start;  Removed because message-row handles alignment */
   background-color: #E2E2E2;
   color: #333;
   /* margin-right: auto; Removed */
 }
-
 .user-message {
   /* align-self: flex-end; Removed because message-row handles alignment */
   background-color: #007BFF;
   color: white;
   /* margin-left: auto; Removed */
 }
-
 /* Style for initial loading message */
 .initial-loading {
   font-style: italic;
@@ -138,8 +125,6 @@
   margin: 20px auto;
   max-width: 80%;
 }
-
-
 /* Container for initial loading message and spinner */
 .initial-loading-container {
   display: flex;
@@ -175,9 +160,6 @@
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-
-
 .chat-input-area {
   padding: 15px 20px;
   background-color: #F0F0F0; /* Light gray background for input area */
@@ -232,8 +214,6 @@
   cursor: not-allowed; /* Indicate it's not clickable */
   opacity: 0.7; /* Slightly dim the disabled button */
 }
-
-
 /* src/components/Chatbot/Chatbot.css  */
 /* Main Chatbot Container */
 .chatbot-container {
@@ -376,4 +356,171 @@
   cursor: pointer;
   transition: background-color 0.3s ease;
   flex-shrink: 0; /* Prevent button from shrinking */
+}
+.chatbot-input button:hover {
+  background-color: #218838;
+}
+.chatbot-input button:disabled {
+  background-color: #6C757D; /* Grey when disabled */
+  cursor: not-allowed;
+}
+/* New wrapper for fixed positioning */
+.chatbot-wrapper {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensure it stays on top */
+  font-family: Arial, sans-serif;
+}
+/* Styles for the OPEN Chat Button (when chat is closed) */
+.chatbot-open-button {
+  background-color: #007BFF; /* Primary blue */
+  color: white;
+  border: none;
+  border-radius: 50%; /* Make it round */
+  width: 100px; /* Size of the button */
+  height: 100px; /* Size of the button */
+  font-size: 2.5em; /* Bigger chat bubble */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+  /* Positioned relative to .chatbot-wrapper implicitly */
+}
+.chatbot-open-button:hover {
+  transform: scale(1.1); /* More prominent hover effect */
+}
+/* Chat Window */
+.chatbot-window {
+  background-color: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  width: 350px;
+  height: 450px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  position: absolute; /* Positioned relative to .chatbot-wrapper */
+  bottom: 0; /* Align to the bottom of the wrapper */
+  right: 0; /* Align to the right of the wrapper */
+  transform-origin: bottom right; /* For scaling effect */
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+}
+/* State for Closed Chat Window (hidden, no pointer events) */
+.chatbot-window.closed {
+  opacity: 0;
+  pointer-events: none;
+  transform: scale(0.8); /* Shrink it */
+  visibility: hidden;
+}
+/* State for Open Chat Window */
+.chatbot-window.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: scale(1);
+  visibility: visible;
+}
+/* Chatbot Header */
+.chatbot-header {
+  background-color: #F8F9FA;
+  padding: 15px;
+  border-bottom: 1px solid #E0E0E0;
+  text-align: center;
+  flex-shrink: 0;
+  position: relative; /* Needed for positioning the close button inside */
+}
+.chatbot-header h2 {
+  margin: 0;
+  color: #343A40;
+  font-size: 1.2em;
+}
+/* Styles for the CLOSE Chat Button (inside the window header) */
+.chatbot-close-button {
+  background: none;
+  border: none;
+  color: #6C757D; /* Dark grey for close icon */
+  font-size: 1em; /* Size of the X */
+  position: absolute;
+  top: 5px; /* Adjust as needed */
+  right: 10px; /* Adjust as needed */
+  cursor: pointer;
+  padding: 5px;
+  transition: color 0.2s ease;
+}
+.chatbot-close-button:hover {
+  /* color: #06090C; Darker on hover */
+    transform: scale(1.1); /* More prominent hover effect */
+}
+/* Messages Area */
+.chatbot-messages {
+  flex-grow: 1;
+  padding: 15px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #FEFEFE;
+}
+/* Individual Message Styling */
+.message {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 18px;
+  line-height: 1.4;
+  word-wrap: break-word;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+.message.user {
+  background-color: #007BFF;
+  color: white;
+  align-self: flex-end;
+  border-bottom-right-radius: 5px;
+}
+.message.bot {
+  background-color: #E9ECEF;
+  color: #343A40;
+  align-self: flex-start;
+  border-bottom-left-radius: 5px;
+}
+/* Input Area */
+.chatbot-input {
+  display: flex;
+  padding: 15px;
+  border-top: 1px solid #E0E0E0;
+  background-color: #F8F9FA;
+  flex-shrink: 0;
+}
+.chatbot-input input {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #CED4DA;
+  border-radius: 20px;
+  margin-right: 10px;
+  font-size: 1em;
+  outline: none;
+}
+.chatbot-input input:focus {
+  border-color: #007BFF;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+.chatbot-input button {
+  background-color: #28A745;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 15px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  flex-shrink: 0;
+}
+.chatbot-input button:hover {
+  background-color: #218838;
+}
+.chatbot-input button:disabled {
+  background-color: #6C757D;
+  cursor: not-allowed;
 }

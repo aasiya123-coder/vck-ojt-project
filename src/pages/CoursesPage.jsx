@@ -5,9 +5,10 @@ import React from "react";
 const CoursesPage = () => {
   return(
     <div>
-        <Header/>
+    <Header/>
+         <div className="main-container">
         <div className="page-container" style={{overflow:"auto"}}>
-
+    
             <h1>Our Academic Programs</h1>
                 <p>Vivekanand College offers a comprehensive range of undergraduate and postgraduate programs designed to equip students with the knowledge and skills demanded by today's dynamic global landscape. Our curriculum is regularly updated to reflect industry trends and academic advancements.
                 </p>
@@ -51,7 +52,7 @@ const CoursesPage = () => {
     </ul>
     </ul>
     <h2>Program Details & Fee Structure (Annual)</h2>
-    <table className="admission-table course-details-table">
+    <table border="1" className="admission-table course-details-table">
         <thead>
         <tr>
             <th>Program Type</th>
@@ -90,6 +91,7 @@ const CoursesPage = () => {
             <div className="call-to-action">
                 <p>Have questions about specific course?</p>
                 <Link to="/contact" className="btn">Inquire About Courses</Link>
+            </div>
             </div>
             </div>
             </div>
